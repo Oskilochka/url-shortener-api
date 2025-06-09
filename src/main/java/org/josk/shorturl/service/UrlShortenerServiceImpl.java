@@ -25,7 +25,6 @@ public class UrlShortenerServiceImpl implements UrlShortenerService {
     @Override
     public String createShortUrl(String originalUrl){
         if (!urlValidator.isValid(originalUrl)) {
-            System.out.println("URL invalid");
             throw new InvalidUrlException("Invalid or unsafe URL provided.");
         }
 
