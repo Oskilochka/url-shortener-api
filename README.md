@@ -37,7 +37,7 @@ Make sure to define the following environment variables in your .env file or a s
 * REDIS_PORT — Redis port, typically 6379
 
 **Example .env:**
-```json
+```
 APP_BASE_URL=http://localhost:8080
 REDIS_HOST=redis
 REDIS_PORT=6379
@@ -45,7 +45,7 @@ REDIS_PORT=6379
 
 #### Stopping Containers
 Stop and remove the containers by running:
-```json
+```
 docker-compose down
 ```
 
@@ -78,7 +78,7 @@ Create a short URL for the given original URL.
 
 **Response:**
 
-```json
+```
 200 OK
 "http://localhost:8080/abc123"
 ```
@@ -87,7 +87,7 @@ Create a short URL for the given original URL.
 Redirects to the original URL or returns 404 if not found.
 
 **Response:**
-```json
+```
 302 FOUND with redirect
 404 NOT FOUND if code does not exist
 ```
@@ -116,7 +116,7 @@ Redirects to the original URL or returns 404 if not found.
 - UrlControllerIntegrationTest
 
 **Run Tests:**
-```json
+```
 ./gradlew clean test
 ```
 
@@ -133,3 +133,11 @@ curl -X POST http://localhost:8080/api/v1/shorten \
 ```bash
 curl -v http://localhost:8080/api/v1/shorten/cf8544
 ```
+
+#### Screenshots:
+![photo_2025-06-09_23-03-35](https://github.com/user-attachments/assets/dc5a896c-f6b6-4a14-af45-11f1807fb83d)
+![photo_2025-06-09_23-03-57](https://github.com/user-attachments/assets/73045333-464b-4734-a65e-24726a314d69)
+![photo_2025-06-09_23-03-54](https://github.com/user-attachments/assets/6704a284-72c6-478c-9ab0-c246da8ea99f)
+![photo_2025-06-09_23-03-49](https://github.com/user-attachments/assets/a6f88204-9d03-4eef-b353-1741eb281258)
+![photo_2025-06-09_23-03-45](https://github.com/user-attachments/assets/ad749446-282a-44e1-82ae-3f9a05f7ad1f)
+
