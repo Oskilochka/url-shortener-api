@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: shortUrl
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 60000
+
+app:
+  url-ttl-seconds: 86400  # 24h
+  base-url: ${APP_BASE_URL:http://localhost:8080}

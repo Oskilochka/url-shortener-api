@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+
+  url-shortener:
+    build: .
+    container_name: url-shortener
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+        - APP_BASE_URL=${APP_BASE_URL}
+        - REDIS_HOST=${REDIS_HOST}
+        - REDIS_PORT=${REDIS_PORT}
+    ports:
+      - "8080:8080"
